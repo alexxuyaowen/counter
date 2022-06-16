@@ -11,9 +11,12 @@ const Counter = () => {
     setCount(prev => prev - 1);
   };
 
-  const alertHandler = () => {
+  let alertHandler = () => {
     setTimeout(() => {
-      alert(count);
+      setCount(prev => {
+        alert(prev);
+        return prev;
+      });
     }, 5000);
   };
 
