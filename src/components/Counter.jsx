@@ -13,11 +13,15 @@ const Counter = () => {
 
   let alertHandler = () => {
     setTimeout(() => {
+      let alerted = false;
       setCount(prev => {
-        alert(prev);
+        !alerted && alert(prev);
+        alerted = true;
         return prev;
       });
     }, 5000);
+
+    console.log(count);
   };
 
   return (
